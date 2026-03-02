@@ -1,0 +1,23 @@
+15:06:50 [INFO] scraper.scraper: Starting pilot scrape for moskva
+15:06:50 [INFO] scraper.scraper: Specialties: ['oftalmolog', 'detskiy-oftalmolog', 'pediatr', 'nevrolog']
+15:06:50 [INFO] scraper.scraper: 
+============================================================
+15:06:50 [INFO] scraper.scraper: Scraping: Офтальмолог in moskva
+15:06:50 [INFO] scraper.scraper: ============================================================
+15:06:50 [INFO] scraper.scraper: Fetching listing page 1/1: https://prodoctorov.ru/moskva/oftalmolog/
+15:06:53 [INFO] scraper.parsers: Found 30 doctor URLs, max page: 6
+15:06:53 [INFO] scraper.scraper: Updated max page to 6
+15:06:53 [INFO] scraper.scraper: Page 1: found 30 doctors (total: 30)
+15:06:53 [INFO] scraper.scraper: Fetching listing page 2/6: https://prodoctorov.ru/moskva/oftalmolog/?page=2
+15:06:56 [INFO] scraper.parsers: Found 27 doctor URLs, max page: 7
+15:06:56 [INFO] scraper.scraper: Updated max page to 7
+15:06:56 [INFO] scraper.scraper: Page 2: found 27 doctors (total: 50)
+15:06:56 [INFO] scraper.scraper: Fetching listing page 3/7: https://prodoctorov.ru/moskva/oftalmolog/?page=3
+15:07:00 [INFO] scraper.parsers: Found 27 doctor URLs, max page: 8
+15:07:00 [INFO] scraper.scraper: Updated max page to 8
+15:07:00 [INFO] scraper.scraper: Page 3: found 27 doctors (total: 70)
+15:07:00 [INFO] scraper.scraper: Fetching listing page 4/8: https://prodoctorov.ru/moskva/oftalmolog/?page=4
+15:07:04 [INFO] scraper.parsers: Found 27 doctor URLs, max page: 9
+15:07:04 [INFO] scraper.scraper: Updated max page to 9
+15:07:04 [INFO] scraper.scraper: Page 4: found 27 doctors (total: 90)
+15:07:04 [INFO] scraper.scraper: Fetching listing page 5/9: https://prodoctorov.ru/moskva/oftalmolog/?page=5
