@@ -3557,3 +3557,263 @@ Total unique doctors: 2817
 11:56:54 [INFO] scraper.exporter: Exported 2817 doctors to output/doctors_20260302_115654.xlsx
 11:56:54 [INFO] scraper.scraper: Excel exported: output/doctors_20260302_115654.xlsx
 11:56:54 [INFO] scraper.scraper: Request stats: {'total_requests': 2961, 'failed_requests': 0}
+13:26:50 [INFO] scraper.scraper: Starting pilot scrape for moskva
+13:26:50 [INFO] scraper.scraper: Specialties: ['oftalmolog']
+13:26:51 [INFO] scraper.scraper: Loaded 2395 completed doctors from Excel: doctors_20260302_115654.xlsx
+13:26:51 [INFO] scraper.scraper: 
+============================================================
+13:26:51 [INFO] scraper.scraper: Scraping: oftalmolog in moskva
+13:26:51 [INFO] scraper.scraper: ============================================================
+13:26:51 [INFO] scraper.scraper: Loaded 2395 completed doctors from Excel: doctors_20260302_115654.xlsx
+13:26:51 [INFO] scraper.scraper: Fetching listing page 1/1: https://prodoctorov.ru/moskva/oftalmolog/
+13:26:53 [INFO] scraper.parsers: Found 29 doctor URLs, max page: 6
+13:26:53 [INFO] scraper.scraper: Updated max page to 6
+13:26:53 [INFO] scraper.scraper: Page 1: found 29 doctors (total: 29)
+13:26:53 [INFO] scraper.scraper: Fetching listing page 2/6: https://prodoctorov.ru/moskva/oftalmolog/?page=2
+13:27:00 [INFO] scraper.parsers: Found 26 doctor URLs, max page: 7
+13:27:00 [INFO] scraper.scraper: Updated max page to 7
+13:27:00 [INFO] scraper.scraper: Page 2: found 26 doctors (total: 48)
+13:27:00 [INFO] scraper.scraper: Fetching listing page 3/7: https://prodoctorov.ru/moskva/oftalmolog/?page=3
+13:27:04 [INFO] scraper.parsers: Found 27 doctor URLs, max page: 8
+13:27:04 [INFO] scraper.scraper: Updated max page to 8
+13:27:04 [INFO] scraper.scraper: Page 3: found 27 doctors (total: 68)
+13:27:04 [INFO] scraper.scraper: Fetching listing page 4/8: https://prodoctorov.ru/moskva/oftalmolog/?page=4
+13:27:09 [INFO] scraper.parsers: Found 27 doctor URLs, max page: 9
+13:27:09 [INFO] scraper.scraper: Updated max page to 9
+13:27:09 [INFO] scraper.scraper: Page 4: found 27 doctors (total: 88)
+13:27:09 [INFO] scraper.scraper: Fetching listing page 5/9: https://prodoctorov.ru/moskva/oftalmolog/?page=5
+13:27:17 [INFO] scraper.parsers: Found 27 doctor URLs, max page: 10
+13:27:17 [INFO] scraper.scraper: Updated max page to 10
+13:27:17 [INFO] scraper.scraper: Page 5: found 27 doctors (total: 108)
+13:27:17 [INFO] scraper.scraper: Fetching listing page 6/10: https://prodoctorov.ru/moskva/oftalmolog/?page=6
+13:27:23 [INFO] scraper.parsers: Found 27 doctor URLs, max page: 11
+13:27:23 [INFO] scraper.scraper: Updated max page to 11
+13:27:23 [INFO] scraper.scraper: Page 6: found 27 doctors (total: 128)
+13:27:23 [INFO] scraper.scraper: Fetching listing page 7/11: https://prodoctorov.ru/moskva/oftalmolog/?page=7
+13:27:29 [INFO] scraper.parsers: Found 27 doctor URLs, max page: 12
+13:27:29 [INFO] scraper.scraper: Updated max page to 12
+13:27:29 [INFO] scraper.scraper: Page 7: found 27 doctors (total: 148)
+13:27:29 [INFO] scraper.scraper: Fetching listing page 8/12: https://prodoctorov.ru/moskva/oftalmolog/?page=8
+13:27:35 [INFO] scraper.parsers: Found 27 doctor URLs, max page: 13
+13:27:35 [INFO] scraper.scraper: Updated max page to 13
+13:27:35 [INFO] scraper.scraper: Page 8: found 27 doctors (total: 168)
+13:27:35 [INFO] scraper.scraper: Fetching listing page 9/13: https://prodoctorov.ru/moskva/oftalmolog/?page=9
+13:27:44 [INFO] scraper.parsers: Found 26 doctor URLs, max page: 14
+13:27:44 [INFO] scraper.scraper: Updated max page to 14
+13:27:44 [INFO] scraper.scraper: Page 9: found 26 doctors (total: 187)
+13:27:44 [INFO] scraper.scraper: Fetching listing page 10/14: https://prodoctorov.ru/moskva/oftalmolog/?page=10
+13:27:51 [INFO] scraper.parsers: Found 27 doctor URLs, max page: 15
+13:27:51 [INFO] scraper.scraper: Updated max page to 15
+13:27:51 [INFO] scraper.scraper: Page 10: found 27 doctors (total: 207)
+13:27:51 [INFO] scraper.scraper: Fetching listing page 11/15: https://prodoctorov.ru/moskva/oftalmolog/?page=11
+13:27:57 [INFO] scraper.parsers: Found 27 doctor URLs, max page: 16
+13:27:57 [INFO] scraper.scraper: Updated max page to 16
+13:27:57 [INFO] scraper.scraper: Page 11: found 27 doctors (total: 227)
+13:27:57 [INFO] scraper.scraper: Fetching listing page 12/16: https://prodoctorov.ru/moskva/oftalmolog/?page=12
+13:28:02 [INFO] scraper.parsers: Found 27 doctor URLs, max page: 17
+13:28:02 [INFO] scraper.scraper: Updated max page to 17
+13:28:02 [INFO] scraper.scraper: Page 12: found 27 doctors (total: 247)
+13:28:02 [INFO] scraper.scraper: Fetching listing page 13/17: https://prodoctorov.ru/moskva/oftalmolog/?page=13
+13:28:06 [INFO] scraper.parsers: Found 27 doctor URLs, max page: 18
+13:28:06 [INFO] scraper.scraper: Updated max page to 18
+13:28:06 [INFO] scraper.scraper: Page 13: found 27 doctors (total: 267)
+13:28:06 [INFO] scraper.scraper: Fetching listing page 14/18: https://prodoctorov.ru/moskva/oftalmolog/?page=14
+13:28:13 [INFO] scraper.parsers: Found 27 doctor URLs, max page: 19
+13:28:13 [INFO] scraper.scraper: Updated max page to 19
+13:28:13 [INFO] scraper.scraper: Page 14: found 27 doctors (total: 287)
+13:28:13 [INFO] scraper.scraper: Fetching listing page 15/19: https://prodoctorov.ru/moskva/oftalmolog/?page=15
+13:28:19 [INFO] scraper.parsers: Found 27 doctor URLs, max page: 20
+13:28:19 [INFO] scraper.scraper: Updated max page to 20
+13:28:19 [INFO] scraper.scraper: Page 15: found 27 doctors (total: 307)
+13:28:19 [INFO] scraper.scraper: Fetching listing page 16/20: https://prodoctorov.ru/moskva/oftalmolog/?page=16
+13:28:24 [INFO] scraper.parsers: Found 27 doctor URLs, max page: 21
+13:28:24 [INFO] scraper.scraper: Updated max page to 21
+13:28:24 [INFO] scraper.scraper: Page 16: found 27 doctors (total: 327)
+13:28:24 [INFO] scraper.scraper: Fetching listing page 17/21: https://prodoctorov.ru/moskva/oftalmolog/?page=17
+13:28:30 [INFO] scraper.parsers: Found 27 doctor URLs, max page: 22
+13:28:30 [INFO] scraper.scraper: Updated max page to 22
+13:28:30 [INFO] scraper.scraper: Page 17: found 27 doctors (total: 347)
+13:28:30 [INFO] scraper.scraper: Fetching listing page 18/22: https://prodoctorov.ru/moskva/oftalmolog/?page=18
+13:28:35 [INFO] scraper.parsers: Found 27 doctor URLs, max page: 23
+13:28:35 [INFO] scraper.scraper: Updated max page to 23
+13:28:35 [INFO] scraper.scraper: Page 18: found 27 doctors (total: 367)
+13:28:35 [INFO] scraper.scraper: Fetching listing page 19/23: https://prodoctorov.ru/moskva/oftalmolog/?page=19
+13:28:41 [INFO] scraper.parsers: Found 27 doctor URLs, max page: 24
+13:28:41 [INFO] scraper.scraper: Updated max page to 24
+13:28:41 [INFO] scraper.scraper: Page 19: found 27 doctors (total: 387)
+13:28:41 [INFO] scraper.scraper: Fetching listing page 20/24: https://prodoctorov.ru/moskva/oftalmolog/?page=20
+13:28:45 [INFO] scraper.parsers: Found 27 doctor URLs, max page: 25
+13:28:45 [INFO] scraper.scraper: Updated max page to 25
+13:28:45 [INFO] scraper.scraper: Page 20: found 27 doctors (total: 407)
+13:28:45 [INFO] scraper.scraper: Fetching listing page 21/25: https://prodoctorov.ru/moskva/oftalmolog/?page=21
+13:28:52 [INFO] scraper.parsers: Found 27 doctor URLs, max page: 26
+13:28:52 [INFO] scraper.scraper: Updated max page to 26
+13:28:52 [INFO] scraper.scraper: Page 21: found 27 doctors (total: 427)
+13:28:52 [INFO] scraper.scraper: Fetching listing page 22/26: https://prodoctorov.ru/moskva/oftalmolog/?page=22
+13:28:57 [INFO] scraper.parsers: Found 27 doctor URLs, max page: 27
+13:28:57 [INFO] scraper.scraper: Updated max page to 27
+13:28:57 [INFO] scraper.scraper: Page 22: found 27 doctors (total: 447)
+13:28:57 [INFO] scraper.scraper: Fetching listing page 23/27: https://prodoctorov.ru/moskva/oftalmolog/?page=23
+13:29:03 [INFO] scraper.parsers: Found 27 doctor URLs, max page: 28
+13:29:03 [INFO] scraper.scraper: Updated max page to 28
+13:29:03 [INFO] scraper.scraper: Page 23: found 27 doctors (total: 467)
+13:29:03 [INFO] scraper.scraper: Fetching listing page 24/28: https://prodoctorov.ru/moskva/oftalmolog/?page=24
+13:29:08 [INFO] scraper.parsers: Found 27 doctor URLs, max page: 29
+13:29:08 [INFO] scraper.scraper: Updated max page to 29
+13:29:08 [INFO] scraper.scraper: Page 24: found 27 doctors (total: 487)
+13:29:08 [INFO] scraper.scraper: Fetching listing page 25/29: https://prodoctorov.ru/moskva/oftalmolog/?page=25
+13:29:14 [INFO] scraper.parsers: Found 27 doctor URLs, max page: 30
+13:29:14 [INFO] scraper.scraper: Updated max page to 30
+13:29:14 [INFO] scraper.scraper: Page 25: found 27 doctors (total: 507)
+13:29:14 [INFO] scraper.scraper: Fetching listing page 26/30: https://prodoctorov.ru/moskva/oftalmolog/?page=26
+13:29:21 [INFO] scraper.parsers: Found 27 doctor URLs, max page: 31
+13:29:21 [INFO] scraper.scraper: Updated max page to 31
+13:29:21 [INFO] scraper.scraper: Page 26: found 27 doctors (total: 527)
+13:29:21 [INFO] scraper.scraper: Fetching listing page 27/31: https://prodoctorov.ru/moskva/oftalmolog/?page=27
+13:29:26 [INFO] scraper.parsers: Found 26 doctor URLs, max page: 32
+13:29:26 [INFO] scraper.scraper: Updated max page to 32
+13:29:26 [INFO] scraper.scraper: Page 27: found 26 doctors (total: 546)
+13:29:26 [INFO] scraper.scraper: Fetching listing page 28/32: https://prodoctorov.ru/moskva/oftalmolog/?page=28
+13:29:32 [INFO] scraper.parsers: Found 27 doctor URLs, max page: 33
+13:29:32 [INFO] scraper.scraper: Updated max page to 33
+13:29:32 [INFO] scraper.scraper: Page 28: found 27 doctors (total: 566)
+13:29:32 [INFO] scraper.scraper: Fetching listing page 29/33: https://prodoctorov.ru/moskva/oftalmolog/?page=29
+13:29:39 [INFO] scraper.parsers: Found 27 doctor URLs, max page: 34
+13:29:39 [INFO] scraper.scraper: Updated max page to 34
+13:29:39 [INFO] scraper.scraper: Page 29: found 27 doctors (total: 586)
+13:29:39 [INFO] scraper.scraper: Fetching listing page 30/34: https://prodoctorov.ru/moskva/oftalmolog/?page=30
+13:29:44 [INFO] scraper.parsers: Found 27 doctor URLs, max page: 35
+13:29:44 [INFO] scraper.scraper: Updated max page to 35
+13:29:44 [INFO] scraper.scraper: Page 30: found 27 doctors (total: 606)
+13:29:44 [INFO] scraper.scraper: Fetching listing page 31/35: https://prodoctorov.ru/moskva/oftalmolog/?page=31
+13:29:48 [INFO] scraper.parsers: Found 27 doctor URLs, max page: 36
+13:29:48 [INFO] scraper.scraper: Updated max page to 36
+13:29:48 [INFO] scraper.scraper: Page 31: found 27 doctors (total: 626)
+13:29:48 [INFO] scraper.scraper: Fetching listing page 32/36: https://prodoctorov.ru/moskva/oftalmolog/?page=32
+13:29:53 [INFO] scraper.parsers: Found 27 doctor URLs, max page: 37
+13:29:53 [INFO] scraper.scraper: Updated max page to 37
+13:29:53 [INFO] scraper.scraper: Page 32: found 27 doctors (total: 646)
+13:29:53 [INFO] scraper.scraper: Fetching listing page 33/37: https://prodoctorov.ru/moskva/oftalmolog/?page=33
+13:29:58 [INFO] scraper.parsers: Found 27 doctor URLs, max page: 38
+13:29:58 [INFO] scraper.scraper: Updated max page to 38
+13:29:58 [INFO] scraper.scraper: Page 33: found 27 doctors (total: 666)
+13:29:58 [INFO] scraper.scraper: Fetching listing page 34/38: https://prodoctorov.ru/moskva/oftalmolog/?page=34
+13:30:03 [INFO] scraper.parsers: Found 26 doctor URLs, max page: 39
+13:30:03 [INFO] scraper.scraper: Updated max page to 39
+13:30:03 [INFO] scraper.scraper: Page 34: found 26 doctors (total: 685)
+13:30:03 [INFO] scraper.scraper: Fetching listing page 35/39: https://prodoctorov.ru/moskva/oftalmolog/?page=35
+13:30:08 [INFO] scraper.parsers: Found 26 doctor URLs, max page: 40
+13:30:08 [INFO] scraper.scraper: Updated max page to 40
+13:30:08 [INFO] scraper.scraper: Page 35: found 26 doctors (total: 704)
+13:30:08 [INFO] scraper.scraper: Fetching listing page 36/40: https://prodoctorov.ru/moskva/oftalmolog/?page=36
+13:30:12 [INFO] scraper.parsers: Found 27 doctor URLs, max page: 41
+13:30:12 [INFO] scraper.scraper: Updated max page to 41
+13:30:12 [INFO] scraper.scraper: Page 36: found 27 doctors (total: 724)
+13:30:12 [INFO] scraper.scraper: Fetching listing page 37/41: https://prodoctorov.ru/moskva/oftalmolog/?page=37
+13:30:19 [INFO] scraper.parsers: Found 27 doctor URLs, max page: 42
+13:30:19 [INFO] scraper.scraper: Updated max page to 42
+13:30:19 [INFO] scraper.scraper: Page 37: found 27 doctors (total: 744)
+13:30:19 [INFO] scraper.scraper: Fetching listing page 38/42: https://prodoctorov.ru/moskva/oftalmolog/?page=38
+13:30:24 [INFO] scraper.parsers: Found 27 doctor URLs, max page: 43
+13:30:24 [INFO] scraper.scraper: Updated max page to 43
+13:30:24 [INFO] scraper.scraper: Page 38: found 27 doctors (total: 764)
+13:30:24 [INFO] scraper.scraper: Fetching listing page 39/43: https://prodoctorov.ru/moskva/oftalmolog/?page=39
+13:30:30 [INFO] scraper.parsers: Found 27 doctor URLs, max page: 44
+13:30:30 [INFO] scraper.scraper: Updated max page to 44
+13:30:30 [INFO] scraper.scraper: Page 39: found 27 doctors (total: 784)
+13:30:30 [INFO] scraper.scraper: Fetching listing page 40/44: https://prodoctorov.ru/moskva/oftalmolog/?page=40
+13:30:34 [INFO] scraper.parsers: Found 27 doctor URLs, max page: 45
+13:30:34 [INFO] scraper.scraper: Updated max page to 45
+13:30:34 [INFO] scraper.scraper: Page 40: found 27 doctors (total: 804)
+13:30:34 [INFO] scraper.scraper: Fetching listing page 41/45: https://prodoctorov.ru/moskva/oftalmolog/?page=41
+13:30:39 [INFO] scraper.parsers: Found 27 doctor URLs, max page: 46
+13:30:39 [INFO] scraper.scraper: Updated max page to 46
+13:30:39 [INFO] scraper.scraper: Page 41: found 27 doctors (total: 824)
+13:30:39 [INFO] scraper.scraper: Fetching listing page 42/46: https://prodoctorov.ru/moskva/oftalmolog/?page=42
+13:30:44 [INFO] scraper.parsers: Found 27 doctor URLs, max page: 47
+13:30:44 [INFO] scraper.scraper: Updated max page to 47
+13:30:44 [INFO] scraper.scraper: Page 42: found 27 doctors (total: 844)
+13:30:44 [INFO] scraper.scraper: Fetching listing page 43/47: https://prodoctorov.ru/moskva/oftalmolog/?page=43
+13:30:48 [INFO] scraper.parsers: Found 27 doctor URLs, max page: 48
+13:30:48 [INFO] scraper.scraper: Updated max page to 48
+13:30:48 [INFO] scraper.scraper: Page 43: found 27 doctors (total: 864)
+13:30:48 [INFO] scraper.scraper: Fetching listing page 44/48: https://prodoctorov.ru/moskva/oftalmolog/?page=44
+13:30:54 [INFO] scraper.parsers: Found 27 doctor URLs, max page: 49
+13:30:54 [INFO] scraper.scraper: Updated max page to 49
+13:30:54 [INFO] scraper.scraper: Page 44: found 27 doctors (total: 884)
+13:30:54 [INFO] scraper.scraper: Fetching listing page 45/49: https://prodoctorov.ru/moskva/oftalmolog/?page=45
+13:30:59 [INFO] scraper.parsers: Found 27 doctor URLs, max page: 50
+13:30:59 [INFO] scraper.scraper: Updated max page to 50
+13:30:59 [INFO] scraper.scraper: Page 45: found 27 doctors (total: 904)
+13:30:59 [INFO] scraper.scraper: Fetching listing page 46/50: https://prodoctorov.ru/moskva/oftalmolog/?page=46
+13:31:04 [INFO] scraper.parsers: Found 27 doctor URLs, max page: 51
+13:31:04 [INFO] scraper.scraper: Updated max page to 51
+13:31:04 [INFO] scraper.scraper: Page 46: found 27 doctors (total: 924)
+13:31:04 [INFO] scraper.scraper: Fetching listing page 47/51: https://prodoctorov.ru/moskva/oftalmolog/?page=47
+13:31:11 [INFO] scraper.parsers: Found 27 doctor URLs, max page: 52
+13:31:11 [INFO] scraper.scraper: Updated max page to 52
+13:31:11 [INFO] scraper.scraper: Page 47: found 27 doctors (total: 944)
+13:31:11 [INFO] scraper.scraper: Fetching listing page 48/52: https://prodoctorov.ru/moskva/oftalmolog/?page=48
+13:31:16 [INFO] scraper.parsers: Found 27 doctor URLs, max page: 53
+13:31:16 [INFO] scraper.scraper: Updated max page to 53
+13:31:16 [INFO] scraper.scraper: Page 48: found 27 doctors (total: 964)
+13:31:16 [INFO] scraper.scraper: Fetching listing page 49/53: https://prodoctorov.ru/moskva/oftalmolog/?page=49
+13:31:22 [INFO] scraper.parsers: Found 27 doctor URLs, max page: 54
+13:31:22 [INFO] scraper.scraper: Updated max page to 54
+13:31:22 [INFO] scraper.scraper: Page 49: found 27 doctors (total: 984)
+13:31:22 [INFO] scraper.scraper: Fetching listing page 50/54: https://prodoctorov.ru/moskva/oftalmolog/?page=50
+13:31:28 [INFO] scraper.parsers: Found 27 doctor URLs, max page: 55
+13:31:28 [INFO] scraper.scraper: Updated max page to 55
+13:31:28 [INFO] scraper.scraper: Page 50: found 27 doctors (total: 1004)
+13:31:28 [INFO] scraper.scraper: Fetching listing page 51/55: https://prodoctorov.ru/moskva/oftalmolog/?page=51
+13:31:35 [INFO] scraper.parsers: Found 27 doctor URLs, max page: 56
+13:31:35 [INFO] scraper.scraper: Updated max page to 56
+13:31:35 [INFO] scraper.scraper: Page 51: found 27 doctors (total: 1024)
+13:31:35 [INFO] scraper.scraper: Fetching listing page 52/56: https://prodoctorov.ru/moskva/oftalmolog/?page=52
+13:31:41 [INFO] scraper.parsers: Found 27 doctor URLs, max page: 57
+13:31:41 [INFO] scraper.scraper: Updated max page to 57
+13:31:41 [INFO] scraper.scraper: Page 52: found 27 doctors (total: 1044)
+13:31:41 [INFO] scraper.scraper: Fetching listing page 53/57: https://prodoctorov.ru/moskva/oftalmolog/?page=53
+13:31:45 [INFO] scraper.parsers: Found 27 doctor URLs, max page: 58
+13:31:45 [INFO] scraper.scraper: Updated max page to 58
+13:31:45 [INFO] scraper.scraper: Page 53: found 27 doctors (total: 1064)
+13:31:45 [INFO] scraper.scraper: Fetching listing page 54/58: https://prodoctorov.ru/moskva/oftalmolog/?page=54
+13:31:50 [INFO] scraper.parsers: Found 26 doctor URLs, max page: 59
+13:31:50 [INFO] scraper.scraper: Updated max page to 59
+13:31:50 [INFO] scraper.scraper: Page 54: found 26 doctors (total: 1083)
+13:31:50 [INFO] scraper.scraper: Fetching listing page 55/59: https://prodoctorov.ru/moskva/oftalmolog/?page=55
+13:31:55 [INFO] scraper.parsers: Found 27 doctor URLs, max page: 60
+13:31:55 [INFO] scraper.scraper: Updated max page to 60
+13:31:55 [INFO] scraper.scraper: Page 55: found 27 doctors (total: 1103)
+13:31:55 [INFO] scraper.scraper: Fetching listing page 56/60: https://prodoctorov.ru/moskva/oftalmolog/?page=56
+13:32:01 [INFO] scraper.parsers: Found 27 doctor URLs, max page: 61
+13:32:01 [INFO] scraper.scraper: Updated max page to 61
+13:32:01 [INFO] scraper.scraper: Page 56: found 27 doctors (total: 1123)
+13:32:01 [INFO] scraper.scraper: Fetching listing page 57/61: https://prodoctorov.ru/moskva/oftalmolog/?page=57
+13:32:05 [INFO] scraper.parsers: Found 27 doctor URLs, max page: 62
+13:32:05 [INFO] scraper.scraper: Updated max page to 62
+13:32:05 [INFO] scraper.scraper: Page 57: found 27 doctors (total: 1143)
+13:32:05 [INFO] scraper.scraper: Fetching listing page 58/62: https://prodoctorov.ru/moskva/oftalmolog/?page=58
+13:32:12 [WARNING] scraper.fetcher: HTTP 403: https://prodoctorov.ru/moskva/oftalmolog/?page=58
+13:32:12 [WARNING] scraper.scraper: Failed to fetch listing page 58
+13:32:12 [INFO] scraper.scraper: Fetching listing page 59/62: https://prodoctorov.ru/moskva/oftalmolog/?page=59
+13:32:16 [WARNING] scraper.fetcher: HTTP 403: https://prodoctorov.ru/moskva/oftalmolog/?page=59
+13:32:16 [WARNING] scraper.scraper: Failed to fetch listing page 59
+13:32:16 [INFO] scraper.scraper: Fetching listing page 60/62: https://prodoctorov.ru/moskva/oftalmolog/?page=60
+13:32:20 [WARNING] scraper.fetcher: HTTP 403: https://prodoctorov.ru/moskva/oftalmolog/?page=60
+13:32:20 [WARNING] scraper.scraper: Failed to fetch listing page 60
+13:32:20 [INFO] scraper.scraper: Fetching listing page 61/62: https://prodoctorov.ru/moskva/oftalmolog/?page=61
+13:32:25 [WARNING] scraper.fetcher: HTTP 403: https://prodoctorov.ru/moskva/oftalmolog/?page=61
+13:32:25 [WARNING] scraper.scraper: Failed to fetch listing page 61
+13:32:25 [INFO] scraper.scraper: Fetching listing page 62/62: https://prodoctorov.ru/moskva/oftalmolog/?page=62
+13:32:30 [WARNING] scraper.fetcher: HTTP 403: https://prodoctorov.ru/moskva/oftalmolog/?page=62
+13:32:30 [WARNING] scraper.scraper: Failed to fetch listing page 62
+13:32:30 [INFO] scraper.scraper: Total doctor URLs: 1143
+13:32:30 [INFO] scraper.scraper: Already scraped: 2395, remaining: 0
+13:32:30 [INFO] scraper.scraper: Checkpoint saved: output/checkpoints/oftalmolog.json (1143 doctors)
+13:32:30 [INFO] scraper.scraper: Completed oftalmolog: 1143 doctors
+13:32:30 [INFO] scraper.scraper: 
+Total unique doctors: 2395
+13:32:30 [INFO] scraper.exporter: Exported 2395 doctors to output/doctors_20260302_115654.xlsx
+13:32:30 [INFO] scraper.scraper: Excel exported: output/doctors_20260302_115654.xlsx
+13:32:30 [INFO] scraper.scraper: Request stats: {'total_requests': 62, 'failed_requests': 5}

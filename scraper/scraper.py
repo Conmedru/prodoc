@@ -4,6 +4,8 @@ import json
 import os
 from datetime import datetime
 
+import pandas as pd
+
 from scraper.config import BASE_URL, PILOT_SPECIALTIES, PILOT_CITY, PILOT_CITY_NAME, OUTPUT_DIR
 from scraper.fetcher import Fetcher
 from scraper.parsers import parse_listing_page, parse_doctor_page, DoctorInfo
@@ -111,12 +113,46 @@ class ProdoctorovScraper:
         logger.info(f"Loaded {len(doctors)} doctors from checkpoint: {filepath}")
         return doctors
 
+    def _load_completed_from_excel(self, excel_path: str) -> list[DoctorInfo]:
+        """Load successfully parsed doctors from an existing Excel file."""
+        doctors = []
+        if not os.path.exists(excel_path):
+            return doctors
+
+        try:
+            df = pd.read_excel(excel_path)
+            # Only keep rows that have a URL and a parsed Specialty (indicating success)
+            df_complete = df.dropna(subset=["URL", "Специальность"])
+            
+            for _, row in df_complete.iterrows():
+                url = str(row["URL"])
+                # Ignore invalid rows that might have snuck in
+                if not url.startswith("http"):
+                    continue
+                    
+                doc = DoctorInfo(
+                    url=url,
+                    full_name=str(row.get("ФИО", "")),
+                    city=str(row.get("Город", PILOT_CITY_NAME)),
+                    specialties=[s.strip() for s in str(row.get("Специальность", "")).split(",") if s.strip()],
+                    current_workplaces=[w.strip() for w in str(row.get("Место работы", "")).split("\n") if w.strip()],
+                    work_addresses=[a.strip() for a in str(row.get("Адрес работы", "")).split("\n") if a.strip()],
+                    experience_years=str(row.get("Стаж", "")),
+                )
+                doctors.append(doc)
+            logger.info(f"Loaded {len(doctors)} completed doctors from Excel: {excel_path}")
+        except Exception as e:
+            logger.error(f"Error loading Excel checkpoint {excel_path}: {e}")
+            
+        return doctors
+
     def scrape_specialty(
         self,
         city: str,
         specialty_slug: str,
         specialty_name: str,
         resume: bool = True,
+        resume_excel: str | None = None,
     ) -> list[DoctorInfo]:
         """Scrape all doctors for a given specialty in a city."""
         logger.info(f"\n{'='*60}")
@@ -126,35 +162,57 @@ class ProdoctorovScraper:
         # Check for existing checkpoint
         existing = []
         existing_urls = set()
-        if resume:
+        
+        if resume_excel and os.path.exists(resume_excel):
+            existing = self._load_completed_from_excel(resume_excel)
+            # Filter existing to only those matching current specialty (optional, but helps keeping lists separate)
+            # Since we iterate over urls from listing anyway, we just need the URLs to skip
+            existing_urls = {d.url for d in existing}
+        elif resume:
             existing = self._load_checkpoint(specialty_slug)
             existing_urls = {d.url for d in existing}
 
         # Collect all doctor URLs
-        doctor_urls = self.collect_doctor_urls(city, specialty_slug)
+        try:
+            doctor_urls = self.collect_doctor_urls(city, specialty_slug)
+        except Exception as e:
+            logger.error(f"Failed to collect listing for {specialty_name}: {e}")
+            return existing
+
         logger.info(f"Total doctor URLs: {len(doctor_urls)}")
 
         # Filter out already scraped
         to_scrape = [u for u in doctor_urls if u not in existing_urls]
         logger.info(f"Already scraped: {len(existing_urls)}, remaining: {len(to_scrape)}")
 
-        specialty_doctors = list(existing)
+        # We will return only the doctors for THIS specialty. 
+        # For excel resume, we just use the set of URLs to skip fetching.
+        # But we must only return doctors that belong to this specialty collection.
+        specialty_doctors = [d for d in existing if d.url in doctor_urls]
+        
         checkpoint_interval = 25
 
         for i, url in enumerate(to_scrape):
             logger.info(f"[{i+1}/{len(to_scrape)}] Scraping: {url}")
-            doctor = self.scrape_doctor(url)
-
-            if doctor is not None:
-                if not doctor.city:
-                    doctor.city = PILOT_CITY_NAME
-                specialty_doctors.append(doctor)
-            else:
-                logger.warning(f"Failed to scrape: {url}")
+            try:
+                doctor = self.scrape_doctor(url)
+                if doctor is not None:
+                    if not doctor.city:
+                        doctor.city = PILOT_CITY_NAME
+                    specialty_doctors.append(doctor)
+                else:
+                    logger.warning(f"Failed to scrape: {url}")
+            except Exception as e:
+                logger.error(f"Scraper stopped unexpectedly: {e}")
+                break
 
             # Periodic checkpoint
             if (i + 1) % checkpoint_interval == 0:
                 self._save_checkpoint(specialty_slug, specialty_doctors)
+                
+                # Also incrementally update Excel if path provided
+                if resume_excel:
+                    export_to_excel(existing + [d for d in specialty_doctors if d not in existing], filename=os.path.basename(resume_excel))
 
         # Final checkpoint
         self._save_checkpoint(specialty_slug, specialty_doctors)
@@ -162,7 +220,7 @@ class ProdoctorovScraper:
         logger.info(f"Completed {specialty_name}: {len(specialty_doctors)} doctors")
         return specialty_doctors
 
-    def run_pilot(self, city: str = PILOT_CITY, specialties: dict | None = None):
+    def run_pilot(self, city: str = PILOT_CITY, specialties: dict | None = None, resume_excel: str | None = None):
         """Run the pilot scrape for specified specialties."""
         if specialties is None:
             specialties = PILOT_SPECIALTIES
@@ -171,11 +229,21 @@ class ProdoctorovScraper:
         logger.info(f"Specialties: {list(specialties.keys())}")
 
         all_doctors = []
+        
+        # Load pre-existing from Excel so we can include them in the final output
+        if resume_excel and os.path.exists(resume_excel):
+            all_doctors.extend(self._load_completed_from_excel(resume_excel))
+            
         for slug, name in specialties.items():
-            doctors = self.scrape_specialty(city, slug, name)
-            all_doctors.extend(doctors)
+            doctors = self.scrape_specialty(city, slug, name, resume_excel=resume_excel)
+            # Add new doctors not already in all_doctors
+            existing_urls = {d.url for d in all_doctors}
+            for d in doctors:
+                if d.url not in existing_urls:
+                    all_doctors.append(d)
+                    existing_urls.add(d.url)
 
-        # Deduplicate by URL
+        # Deduplicate by URL (safety net)
         seen_urls = set()
         unique_doctors = []
         for d in all_doctors:
@@ -186,7 +254,8 @@ class ProdoctorovScraper:
         logger.info(f"\nTotal unique doctors: {len(unique_doctors)}")
 
         # Export
-        filepath = export_to_excel(unique_doctors)
+        output_filename = os.path.basename(resume_excel) if resume_excel else None
+        filepath = export_to_excel(unique_doctors, filename=output_filename)
         logger.info(f"Excel exported: {filepath}")
 
         # Print stats

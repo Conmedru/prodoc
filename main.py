@@ -48,6 +48,11 @@ def main():
         action="store_true",
         help="Verbose logging",
     )
+    parser.add_argument(
+        "--resume-excel",
+        type=str,
+        help="Path to an existing Excel file to resume from. The script will skip URLs already present with a non-empty Specialty field and append new ones.",
+    )
     args = parser.parse_args()
     setup_logging(args.verbose)
 
@@ -58,7 +63,7 @@ def main():
     else:
         specs = PILOT_SPECIALTIES
 
-    doctors = scraper.run_pilot(city=args.city, specialties=specs)
+    doctors = scraper.run_pilot(city=args.city, specialties=specs, resume_excel=args.resume_excel)
     print(f"\nDone! Scraped {len(doctors)} unique doctors.")
 
 
