@@ -16,6 +16,11 @@ on:
         options:
           - 'true'
           - 'false'
+      resume_file:
+        description: 'Excel file to resume from (e.g. doctors_20260302_115654.xlsx)'
+        required: false
+        default: 'doctors_20260302_115654.xlsx'
+        type: string
 
   # Schedule trigger (uncomment to run automatically)
   # schedule:
@@ -48,7 +53,11 @@ jobs:
       - name: Run scraper (full pilot)
         if: github.event.inputs.sample_only != 'true'
         run: |
-          python main.py
+          if [ -n "${{ github.event.inputs.resume_file }}" ] && [ -f "${{ github.event.inputs.resume_file }}" ]; then
+            python main.py --resume-excel "${{ github.event.inputs.resume_file }}"
+          else
+            python main.py
+          fi
 
       - name: Upload results
         uses: actions/upload-artifact@v4
