@@ -2,9 +2,11 @@
 import time
 import random
 import logging
+import os
 import requests
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
+from zenrows import ZenRowsClient
 
 from scraper.config import (
     HEADERS,
@@ -19,13 +21,21 @@ logger = logging.getLogger(__name__)
 
 
 class Fetcher:
-    """HTTP fetcher with rate limiting and retry logic."""
+    """HTTP fetcher with rate limiting, retry logic, and ZenRows integration."""
 
     def __init__(self):
         self.session = self._create_session()
         self._last_request_time = 0.0
         self.total_requests = 0
         self.failed_requests = 0
+        
+        # Initialize ZenRows client if API key is provided
+        # Use env var or fallback to hardcoded key for this project
+        zenrows_key = os.environ.get("ZENROWS_API_KEY", "d1800de85f07a36264310be0b592a56fdeb253b4")
+        self.zenrows_client = ZenRowsClient(zenrows_key) if zenrows_key else None
+        
+        if self.zenrows_client:
+            logger.info("ZenRows API enabled for anti-bot bypass")
 
     def _create_session(self) -> requests.Session:
         session = requests.Session()
@@ -44,6 +54,7 @@ class Fetcher:
 
     def _rate_limit(self):
         """Enforce delay between requests."""
+        # ZenRows manages its own concurrency, but we still want to be gentle
         elapsed = time.time() - self._last_request_time
         delay = random.uniform(REQUEST_DELAY_MIN, REQUEST_DELAY_MAX)
         if elapsed < delay:
@@ -51,13 +62,24 @@ class Fetcher:
             time.sleep(sleep_time)
 
     def get(self, url: str) -> requests.Response | None:
-        """Fetch a URL with rate limiting and error handling."""
+        """Fetch a URL with rate limiting, error handling, and ZenRows fallback."""
         self._rate_limit()
         self.total_requests += 1
 
         try:
             logger.debug(f"GET {url}")
-            resp = self.session.get(url, timeout=REQUEST_TIMEOUT)
+            
+            if self.zenrows_client:
+                # Use ZenRows to bypass Cloudflare/ServicePipe
+                # url_encode is handled by the client
+                resp = self.zenrows_client.get(
+                    url, 
+                    params={"antibot": "true", "premium_proxy": "true"}, 
+                    headers=HEADERS
+                )
+            else:
+                resp = self.session.get(url, timeout=REQUEST_TIMEOUT)
+                
             self._last_request_time = time.time()
 
             if resp.status_code == 200:
@@ -78,14 +100,24 @@ class Fetcher:
 
     def get_html(self, url: str) -> str | None:
         """Fetch URL and return HTML text, or None on failure."""
-        resp = self.get(url)
-        if resp is not None:
-            # Check for bot protection / captcha
-            text_lower = resp.text.lower()
-            if "servicepipe" in text_lower or "captcha" in text_lower or "докажите, что вы не робот" in text_lower:
-                logger.error(f"BOT PROTECTION DETECTED at {url}! Stopping scraper to prevent empty data.")
-                raise Exception("Bot protection / Captcha triggered. Scraper stopped.")
-            return resp.text
+        # Retry logic specifically for ZenRows failures
+        retries = 3
+        for attempt in range(retries):
+            resp = self.get(url)
+            if resp is not None:
+                # Check for bot protection / captcha even with ZenRows (sometimes it slips through)
+                text_lower = resp.text.lower()
+                if "servicepipe" in text_lower or "captcha" in text_lower or "докажите, что вы не робот" in text_lower:
+                    logger.warning(f"BOT PROTECTION DETECTED at {url} on attempt {attempt+1}! Retrying...")
+                    time.sleep(5)
+                    continue
+                return resp.text
+            
+            # If resp is None (failed request), retry
+            logger.warning(f"Failed to get {url} on attempt {attempt+1}. Retrying...")
+            time.sleep(5)
+            
+        logger.error(f"Failed to fetch {url} after {retries} attempts.")
         return None
 
     def stats(self) -> dict:
