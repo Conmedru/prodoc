@@ -80,6 +80,11 @@ class Fetcher:
         """Fetch URL and return HTML text, or None on failure."""
         resp = self.get(url)
         if resp is not None:
+            # Check for bot protection / captcha
+            text_lower = resp.text.lower()
+            if "servicepipe" in text_lower or "captcha" in text_lower or "докажите, что вы не робот" in text_lower:
+                logger.error(f"BOT PROTECTION DETECTED at {url}! Stopping scraper to prevent empty data.")
+                raise Exception("Bot protection / Captcha triggered. Scraper stopped.")
             return resp.text
         return None
 

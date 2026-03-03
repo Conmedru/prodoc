@@ -14,10 +14,10 @@ HEADERS = {
 }
 
 # Rate limiting
-REQUEST_DELAY_MIN = 1.0  # seconds
-REQUEST_DELAY_MAX = 2.5  # seconds
-MAX_RETRIES = 3
-RETRY_DELAY = 5  # seconds
+REQUEST_DELAY_MIN = 2.5  # seconds
+REQUEST_DELAY_MAX = 5.0  # seconds
+MAX_RETRIES = 5
+RETRY_DELAY = 10  # seconds
 
 # Request timeout
 REQUEST_TIMEOUT = 30  # seconds
