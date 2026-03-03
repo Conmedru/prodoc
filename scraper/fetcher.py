@@ -71,11 +71,15 @@ class Fetcher:
             
             if self.zenrows_client:
                 # Use ZenRows to bypass Cloudflare/ServicePipe
-                # url_encode is handled by the client
+                # Remove Accept-Encoding to prevent ZenRows from returning raw gzip bytes 
+                # that requests won't auto-decode due to Zr- prefixed headers.
+                zr_headers = HEADERS.copy()
+                zr_headers.pop("Accept-Encoding", None)
+                
                 resp = self.zenrows_client.get(
                     url, 
                     params={"antibot": "true", "premium_proxy": "true"}, 
-                    headers=HEADERS
+                    headers=zr_headers
                 )
             else:
                 resp = self.session.get(url, timeout=REQUEST_TIMEOUT)

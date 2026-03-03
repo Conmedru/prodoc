@@ -3817,3 +3817,60 @@ Total unique doctors: 2395
 13:32:30 [INFO] scraper.exporter: Exported 2395 doctors to output/doctors_20260302_115654.xlsx
 13:32:30 [INFO] scraper.scraper: Excel exported: output/doctors_20260302_115654.xlsx
 13:32:30 [INFO] scraper.scraper: Request stats: {'total_requests': 62, 'failed_requests': 5}
+06:46:50 [INFO] scraper.fetcher: ZenRows API enabled for anti-bot bypass
+06:46:50 [INFO] scraper.scraper: Starting pilot scrape for moskva
+06:46:50 [INFO] scraper.scraper: Specialties: ['oftalmolog', 'detskiy-oftalmolog', 'pediatr', 'nevrolog']
+06:46:50 [INFO] scraper.scraper: Loaded 2395 completed doctors from Excel: doctors_20260302_115654.xlsx
+06:46:50 [INFO] scraper.scraper: 
+============================================================
+06:46:50 [INFO] scraper.scraper: Scraping: Офтальмолог in moskva
+06:46:50 [INFO] scraper.scraper: ============================================================
+06:46:51 [INFO] scraper.scraper: Loaded 2395 completed doctors from Excel: doctors_20260302_115654.xlsx
+06:46:51 [INFO] scraper.scraper: Fetching listing page 1/1: https://prodoctorov.ru/moskva/oftalmolog/
+06:47:06 [INFO] scraper.parsers: Found 0 doctor URLs, max page: 1
+06:47:06 [INFO] scraper.scraper: Page 1: found 0 doctors (total: 0)
+06:47:06 [INFO] scraper.scraper: Total doctor URLs: 0
+06:47:06 [INFO] scraper.scraper: Already scraped: 2395, remaining: 0
+06:47:06 [INFO] scraper.scraper: Checkpoint saved: output/checkpoints/oftalmolog.json (0 doctors)
+06:47:06 [INFO] scraper.scraper: Completed Офтальмолог: 0 doctors
+06:47:06 [INFO] scraper.scraper: 
+============================================================
+06:47:06 [INFO] scraper.scraper: Scraping: Детский офтальмолог in moskva
+06:47:06 [INFO] scraper.scraper: ============================================================
+06:47:06 [INFO] scraper.scraper: Loaded 2395 completed doctors from Excel: doctors_20260302_115654.xlsx
+06:47:06 [INFO] scraper.scraper: Fetching listing page 1/1: https://prodoctorov.ru/moskva/detskiy-oftalmolog/
+06:47:15 [INFO] scraper.parsers: Found 0 doctor URLs, max page: 1
+06:47:15 [INFO] scraper.scraper: Page 1: found 0 doctors (total: 0)
+06:47:15 [INFO] scraper.scraper: Total doctor URLs: 0
+06:47:15 [INFO] scraper.scraper: Already scraped: 2395, remaining: 0
+06:47:15 [INFO] scraper.scraper: Checkpoint saved: output/checkpoints/detskiy-oftalmolog.json (0 doctors)
+06:47:15 [INFO] scraper.scraper: Completed Детский офтальмолог: 0 doctors
+06:47:15 [INFO] scraper.scraper: 
+============================================================
+06:47:15 [INFO] scraper.scraper: Scraping: Педиатр in moskva
+06:47:15 [INFO] scraper.scraper: ============================================================
+06:47:15 [INFO] scraper.scraper: Loaded 2395 completed doctors from Excel: doctors_20260302_115654.xlsx
+06:47:15 [INFO] scraper.scraper: Fetching listing page 1/1: https://prodoctorov.ru/moskva/pediatr/
+06:47:25 [INFO] scraper.parsers: Found 0 doctor URLs, max page: 1
+06:47:25 [INFO] scraper.scraper: Page 1: found 0 doctors (total: 0)
+06:47:25 [INFO] scraper.scraper: Total doctor URLs: 0
+06:47:25 [INFO] scraper.scraper: Already scraped: 2395, remaining: 0
+06:47:25 [INFO] scraper.scraper: Checkpoint saved: output/checkpoints/pediatr.json (0 doctors)
+06:47:25 [INFO] scraper.scraper: Completed Педиатр: 0 doctors
+06:47:25 [INFO] scraper.scraper: 
+============================================================
+06:47:25 [INFO] scraper.scraper: Scraping: Невролог in moskva
+06:47:25 [INFO] scraper.scraper: ============================================================
+06:47:25 [INFO] scraper.scraper: Loaded 2395 completed doctors from Excel: doctors_20260302_115654.xlsx
+06:47:25 [INFO] scraper.scraper: Fetching listing page 1/1: https://prodoctorov.ru/moskva/nevrolog/
+06:47:38 [INFO] scraper.parsers: Found 0 doctor URLs, max page: 1
+06:47:38 [INFO] scraper.scraper: Page 1: found 0 doctors (total: 0)
+06:47:38 [INFO] scraper.scraper: Total doctor URLs: 0
+06:47:38 [INFO] scraper.scraper: Already scraped: 2395, remaining: 0
+06:47:38 [INFO] scraper.scraper: Checkpoint saved: output/checkpoints/nevrolog.json (0 doctors)
+06:47:38 [INFO] scraper.scraper: Completed Невролог: 0 doctors
+06:47:38 [INFO] scraper.scraper: 
+Total unique doctors: 2395
+06:47:39 [INFO] scraper.exporter: Exported 2395 doctors to output/doctors_20260302_115654.xlsx
+06:47:39 [INFO] scraper.scraper: Excel exported: output/doctors_20260302_115654.xlsx
+06:47:39 [INFO] scraper.scraper: Request stats: {'total_requests': 4, 'failed_requests': 0}
